@@ -13,7 +13,7 @@ const result = document.querySelector('#result');
 weatherForm.addEventListener('submit' , (e) => {
     e.preventDefault();
     console.log('testing'+search.value);
-    fetch('http://localhost:3000/weather?address='+search.value).then((response) => {
+    fetch('/weather?address='+search.value).then((response) => {  // http://localhost:3000
     response.json().then((data)=>{
     console.log(data.Temperature);
     console.log(data)
