@@ -15,7 +15,8 @@ const forecast = (lat, lon, callback) => {
             feelTemp: 0,
             desc: ''
         };
-        forecast_data.desc = response.body.current.weather_descriptions[0];
+        console.log(response.body.current)
+        forecast_data.desc = response.body.current.weather_descriptions[0] + ' and Humidity: ' + response.body.current.humidity ;
         forecast_data.currentTemp = response.body.current.temperature;
         forecast_data.feelTemp = response.body.current.feelslike;
         callback(undefined, forecast_data);
